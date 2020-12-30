@@ -35,18 +35,38 @@ class Tparalel(Tsc):
     def __init__(self,*args):
         super().__init__(*args)
 
-sum = 0
+
 n = int(input('введіть значення n'))
+elems = []
 for i in range(n):
     k = int(random.random() * 4)
     if k == 1:
-        p = Tpryamok()
-        sum += p.s()
+        elems.append(TQuadrangle())
     elif k == 2:
-        p = Tsc()
-        sum += p.s()
-    elif k == 3:
-        p = Tparalel()
-        sum += p.p()
+        elems.append(Tpryamok())
+    else:
+        elems.append(Tsc())
 
-print(sum)
+sq = [el.p() for el in elems]
+
+
+print(sum(sq))
+
+
+
+
+# sum = 0
+# n = int(input('введіть значення n'))
+# for i in range(n):
+#     k = int(random.random() * 4)
+#     if k == 1:
+#         p = Tpryamok()
+#         sum += p.s()
+#     elif k == 2:
+#         p = Tsc()
+#         sum += p.s()
+#     elif k == 3:
+#         p = Tparalel()
+#         sum += p.p()
+#
+# print(sum)
